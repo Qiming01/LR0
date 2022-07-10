@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "oC5fzIRTK7Oe4kmWqIHKHC4oZ24gk8PCsdSiPuFkIYBZvxDhkEho+VtwD+BnJjaqZD/E6pjfWRXwdUAhzyFYMw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Qi_Ming\\source\\repos\\Course_design_of_compiling_principles\\Course_design_of_compiling_principles\\Course_design_of_compiling_principles.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Qi_Ming\\.nuget\\packages\\materialdesigncolors\\2.0.6\\materialdesigncolors.2.0.6.nupkg.sha512",
+    "C:\\Users\\Qi_Ming\\.nuget\\packages\\materialdesignthemes\\4.5.0\\materialdesignthemes.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

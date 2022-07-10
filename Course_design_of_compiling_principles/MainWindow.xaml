@@ -1,0 +1,96 @@
+﻿<Window x:Class="Course_design_of_compiling_principles.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Course_design_of_compiling_principles"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="LR(0)" Height="700" Width="1020" ResizeMode="NoResize" WindowStyle="SingleBorderWindow" Icon="/图标.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="84*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl Grid.ColumnSpan="2">
+            <TabItem Header="过程">
+                <Border Margin="5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"  MinHeight="70" MaxHeight="80"/>
+                            <RowDefinition Height="5*" MinHeight="300"/>
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Grid.ColumnSpan="5" Margin="20" Name="inputArea" Text="bcd" FontSize="25" materialDesign:HintAssist.HelperText="输入一个表达式符号串" materialDesign:HintAssist.HelperTextFontSize="12"/>
+                            <Button Grid.Column="5" Name="startbtn" Content="start" Margin="20" Click="startbtn_Click"/>
+                        </Grid>
+                        <ScrollViewer Grid.Row="1" Grid.ColumnSpan="4">
+                            <Grid>
+                                <DataGrid Margin="25" Name="showArea" FontSize="15" IsReadOnly="True" FontFamily="微软雅黑">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Width="*" Header="步骤" Binding="{Binding step}" />
+                                        <DataGridTextColumn Width="2*" Header="状态栈" Binding="{Binding state}"/>
+                                        <DataGridTextColumn Width="2*" Header="符号栈" Binding="{Binding symbol}"/>
+                                        <DataGridTextColumn Width="2*" Header="输入串" Binding="{Binding inStr}"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                                <Border BorderBrush="Black" BorderThickness="0.5" Margin="18">
+                                </Border>
+                            </Grid>
+                        </ScrollViewer>
+                    </Grid>
+                </Border>
+            </TabItem>
+            <TabItem Header="分析表">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="9*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border BorderBrush="Black" BorderThickness="0.5" Margin="30">
+                        <TextBlock x:Name="AnalysisTable" FontSize="15" FontFamily="微软雅黑" TextAlignment="Center"/>
+                    </Border>
+                    <!--<Button Grid.Row="1" Width="200" Content="生成分析表" Name="generateAnalysisTable" Click="generateAnalysisTable_Click"/>-->
+                </Grid>
+            </TabItem>
+            <TabItem Header="文法">
+                <Border Margin="5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="5*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <DataGrid Margin="25" Name="grammarInput" FontSize="15" IsReadOnly="True" FontFamily="微软雅黑" Grid.ColumnSpan="2" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Width="*" Header="文法" Binding="{Binding GrammarStr}" IsReadOnly="False" CanUserReorder="True" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <!--<TextBox Margin="25" Height="30" FontSize="20" Grid.Row="1" Grid.ColumnSpan="2"  x:Name="userInputGrammar" materialDesign:HintAssist.HelperText="此处输入新的文法，使用空格分隔" materialDesign:HintAssist.HelperTextFontSize="12"/>
+                        <Button Grid.Row="2" Grid.Column="0" Margin="5" Content="保存文法" HorizontalContentAlignment="Center" Width="120" FontFamily="微软雅黑" Name="saveInputGrammar" Click="saveInputGrammar_Click"/>
+                        <Button Grid.Row="2" Grid.Column="1" Margin="5" Content="恢复默认" HorizontalAlignment="Center" Width="120" FontFamily="微软雅黑" Name="defaultGrammar" Click="defaultGrammar_Click"/>-->
+                    </Grid>
+                </Border>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
